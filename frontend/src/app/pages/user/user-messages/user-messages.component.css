@@ -1,0 +1,195 @@
+/* Wrapper and layout */
+.notifications-wrapper {
+    display: flex;
+    gap: 10px;
+    max-width: 1500px;
+    margin: 20px auto;
+    font-family: 'Arial', sans-serif;
+    flex-direction: row;
+  }
+  
+  /* Notifications List */
+  .notifications-container {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    overflow-y: auto; /* Allows scrolling if the list is too long */
+    height: 500px; /* Adjust based on your layout */
+  }
+  
+  /* Title styling */
+  .notifications-title {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #333;
+    text-align: center;
+  }
+  
+  /* Notification list */
+  .notifications-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Notification item (chat bubbles) */
+  .notification-item {
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  /* Hover effect on notification */
+  .notification-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Notification header */
+  .notification-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .notification-subject {
+    font-weight: bold;
+    color: #007bff;
+    font-size: 1.1em;
+  }
+  
+  .notification-timestamp {
+    font-size: 0.9em;
+    color: #999;
+  }
+  
+  /* Notification description (for preview) */
+  .notification-description {
+    font-size: 1em;
+    color: #555;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  /* Placeholder when no notifications */
+  .no-notifications {
+    text-align: center;
+    font-size: 1.2em;
+    color: #666;
+  }
+  
+  /* Notification details panel */
+  .notification-details-container {
+    flex: 2;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  /* Title for detailed notification view */
+  .notification-details-title {
+    font-size: 1.5em;
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  
+  /* Timestamp in notification details */
+  .notification-details-timestamp {
+    font-size: 0.9em;
+    color: #999;
+    margin-bottom: 20px;
+  }
+  
+  /* Body of the detailed notification */
+  .notification-details-body {
+    font-size: 1.1em;
+    color: #333;
+    line-height: 1.5;
+  }
+  
+  /* Close button styling (for the detail view) */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    color: #999;
+    cursor: pointer;
+  }
+  
+  .close-btn:hover {
+    color: #007bff;
+  }
+  
+  /* Admin vs User Notification Style */
+  .notification-item.admin {
+    background-color: #007bff; /* Admin messages in blue */
+    color: white;
+    align-self: flex-start; /* Admin messages aligned to the left */
+  }
+  
+  .notification-item.user {
+    background-color: #e4e6ef; /* User messages in light grey */
+    color: #333;
+    align-self: flex-end; /* User messages aligned to the right */
+  }
+  
+  /* Scroll bar styling */
+  .notifications-container::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .notifications-container::-webkit-scrollbar-thumb {
+    background-color: #007bff;
+    border-radius: 10px;
+  }
+  
+  .notifications-container::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+  }
+  
+
+  /* Style for the selected notification */
+.notification-item.selected {
+    background-color: #d1f6e8; /* Highlight color (yellow, can be changed) */
+    border-left: 5px solid #7bbba3; /* Optional: adds a left border to indicate selection */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds shadow for more emphasis */
+  }
+  
+  /* Admin vs User Notification Style */
+  .notification-item.admin {
+    background-color: #007bff; /* Admin messages in blue */
+    color: white;
+    align-self: flex-start; /* Admin messages aligned to the left */
+  }
+  
+  .notification-item.user {
+    background-color: #e4e6ef; /* User messages in light grey */
+    color: #333;
+    align-self: flex-end; /* User messages aligned to the right */
+  }
+  
+
+
+
+  

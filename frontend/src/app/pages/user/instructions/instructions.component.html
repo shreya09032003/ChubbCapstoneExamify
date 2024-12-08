@@ -1,0 +1,52 @@
+<div class="quiz-instructions-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="quiz-instructions-card">
+          <div class="quiz-instructions-header">
+            <h2 class="quiz-title">Read the instructions of this page carefully</h2>
+            <p class="quiz-subtitle">One step more to go</p>
+          </div>
+
+          <div class="quiz-instructions-content">
+            <h3>{{ quiz.title }}</h3>
+            <p class="quiz-description">{{ quiz.description }}</p>
+
+            <div class="instructions-section">
+              <h4>Important Instructions</h4>
+              <ul class="instruction-list">
+                <li>This quiz is only for practice purposes.</li>
+                <li>
+                  You must submit the quiz within <b>{{ quiz.numberOfQuestions * 2 }} minutes.</b>
+                </li>
+                <li>You can attempt the quiz any number of times.</li>
+                <li>There are <b>{{ quiz.numberOfQuestions }} questions</b> in this quiz.</li>
+                <li>
+                  Each question carries <b>{{ quiz.maxMarks / quiz.numberOfQuestions }} marks</b>.
+                  No negative marking for wrong answers.
+                </li>
+                <li>All questions are of MCQ type.</li>
+              </ul>
+            </div>
+
+            <div class="instructions-section">
+              <h4>Attempting the Quiz</h4>
+              <ul class="instruction-list">
+                <li>Click <b>Start Quiz</b> to begin the quiz.</li>
+                <li>The timer will start as soon as you click the Start Test button.</li>
+                <li>If interrupted, you cannot resume the quiz.</li>
+                <li>Scroll down to proceed to the next question.</li>
+                <li>Click Submit when you finish the quiz.</li>
+                <li>The test report will be automatically generated in PDF format.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="quiz-instructions-footer">
+            <button (click)="startQuiz()" class="start-quiz-btn">Start QUIZ</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

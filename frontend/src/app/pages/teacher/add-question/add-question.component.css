@@ -1,0 +1,130 @@
+/* General styling for the form */
+.bootstrap-wrapper {
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.card {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  background-color: #7fc8ac;
+  color: white;
+  padding: 20px;
+  border-radius: 8px 8px 0 0;
+}
+
+.card-subtitle {
+  font-size: 1.2rem;
+}
+
+.card-body {
+  padding: 40px 40px;
+  background-color: white;
+  border-radius: 0 0 8px 8px;
+}
+
+/* Styling the form-group and inputs */
+.form-group {
+  margin-bottom: 15px;
+}
+
+textarea {
+  width: 80%;
+  padding: 18px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+.form-control {
+  width: 100%;
+  padding: 16px;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* Options layout */
+.row .col-md-6 {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.row {
+  margin-top: 10px;
+}
+
+/* Answer dropdown */
+select.form-control {
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* Styling the submit button */
+.btn-primary {
+  padding: 12px 40px;
+  font-size: 1.1rem;
+  background-color: #7fc8ac;
+  border-color: #7fc8ac;
+  border-radius: 4px;
+}
+
+.btn-primary:hover {
+  background-color: #659e88;
+  /* border-color: #7fc8ac; */
+}
+
+.container.text-center {
+  margin-top: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .col-md-6 {
+    width: 100% !important;
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+}
+
+
+.counter-section {
+  margin-top: 20px;
+  padding: 10px;
+
+  border-radius: 8px; /* Rounded corners */
+
+}
+
+.counter-header {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #343a40; /* Darker grey for text */
+}
+
+.counter {
+  color: #202c34; /* Blue for current questions added */
+  font-weight: bold;
+}
+
+.total {
+  color: #28a745; /* Green for total questions */
+  font-weight: bold;
+}
+
+.counter-warning {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #dc3545; /* Bootstrap danger red color */
+  font-style: italic;
+}

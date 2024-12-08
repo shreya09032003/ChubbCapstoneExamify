@@ -1,0 +1,30 @@
+<div class="dashboard-container">
+    <div class="charts-wrapper">
+        <!-- Admin Analytics Chart -->
+        <div class="chart">
+            <h3>Admin Analytics</h3>
+            <canvas 
+                baseChart 
+                [datasets]="pieChartData.datasets" 
+                [labels]="pieChartLabels" 
+                [options]="pieChartOptions" 
+                [legend]="pieChartLegend" 
+                [type]="pieChartType">
+            </canvas>
+        </div>
+    
+        <!-- Active vs Inactive Quizzes Chart -->
+        <div class="chart">
+            <h3>Active vs Inactive Quizzes</h3>
+            <canvas 
+                baseChart
+                [datasets]="activeInactiveChartData.datasets"
+                [labels]="activeInactiveChartLabels"
+                [options]="activeInactiveChartOptions"
+                [legend]="activeInactiveChartLegend"
+                [type]="pieChartType">
+            </canvas>
+        </div>
+    </div>
+
+</div>

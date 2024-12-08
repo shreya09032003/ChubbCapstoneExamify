@@ -1,0 +1,88 @@
+<div class="form-wrapper">
+  <h1>Update Quiz</h1>
+  <div class="form-container">
+    <form *ngIf="quiz" (submit)="updateData()">
+      <!-- Title field -->
+      <div class="form-group">
+        <label for="title">Enter Title</label>
+        <input
+          [(ngModel)]="quiz.title"
+          type="text"
+          name="title"
+          id="title"
+          placeholder="Enter here"
+          required
+        />
+      </div>
+
+      <!-- Description field -->
+      <div class="form-group">
+        <label for="description">Enter Description</label>
+        <textarea
+          [(ngModel)]="quiz.description"
+          name="description"
+          id="description"
+          placeholder="Enter here"
+          rows="5"
+        ></textarea>
+      </div>
+
+      <!-- Row for max marks and number of questions -->
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="maxMarks">Maximum Marks</label>
+            <input
+              [(ngModel)]="quiz.maxMarks"
+              type="text"
+              name="maxMarks"
+              id="maxMarks"
+              placeholder="Enter here"
+            />
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="numberOfQuestions">Number of Questions</label>
+            <input
+              [(ngModel)]="quiz.numberOfQuestions"
+              type="text"
+              name="numberOfQuestions"
+              id="numberOfQuestions"
+              placeholder="Enter here"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Active field -->
+      <div class="form-group">
+        <label class="switch">
+          <input
+            type="checkbox"
+            [(ngModel)]="quiz.active"
+            name="active"
+            id="active"
+          />
+          <span class="slider round"></span>
+        </label>
+        <span>Publish Status</span>
+      </div>
+
+      <!-- Category select -->
+      <div class="form-group">
+        <label for="category">Categories</label>
+        <select name="category" id="category" [(ngModel)]="quiz.category.cid">
+          <option *ngFor="let c of categories" [value]="c.cid">
+            {{ c.title }}
+          </option>
+        </select>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="form-group text-center">
+        <button type="submit" class="submit-btn">Update</button>
+      </div>
+    </form>
+  </div>
+</div>

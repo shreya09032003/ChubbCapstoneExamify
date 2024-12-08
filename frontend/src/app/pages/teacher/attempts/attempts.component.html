@@ -1,0 +1,27 @@
+<div class="attempts-container">
+    <h3>Results for Quiz: {{ quizTitle }}</h3>
+    
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Student Name</th>
+          <th>Marks Obtained</th>
+          <th>Correct Answers</th>
+          <th>Questions Attempted</th>
+          <th>Quiz Category</th>
+          <th>Max Marks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let result of results">
+          <td>{{ result.username }}</td>
+          <td>{{ result.marksGot }}</td>
+          <td>{{ result.correctAnswers }}</td>
+          <td>{{ result.attempted }}</td>
+          <td>{{ result.quizCategory }}</td>
+          <td>{{ result.maxMarks }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

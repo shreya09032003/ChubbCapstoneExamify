@@ -1,0 +1,137 @@
+<!-- <h1 class="text-center login-heading">Register Here!</h1> -->
+<div class="login-page">
+  <div class="login-container">
+    <!-- Left Section (Image) -->
+    <div class="left-section">
+      <img class="login-image" src="https://img.freepik.com/free-vector/exams-concept-illustration_114360-2754.jpg?t=st=1733394799~exp=1733398399~hmac=eb326f22b71b3bbd33729a551103dd93762ba654ac31114efefd8bb703ded42a&w=740" alt="">
+    </div>
+
+    <!-- Right Section (Form) -->
+    <div class="right-section">
+      <div class="login-card">
+
+        <form (ngSubmit)="formSubmit()">
+          <!-- Username Field -->
+          <div class="full-width form-group">
+            <label for="username">User Name</label>
+            <input
+              required
+              id="username"
+              [(ngModel)]="user.username"
+              name="username"
+              type="text"
+              class="form-control"
+              placeholder="Enter username"
+            />
+            <small class="form-text text-muted">Username must be unique!</small>
+          </div>
+
+          <!-- Password Field -->
+          <div class="full-width form-group">
+            <label for="password">User Password</label>
+            <input
+              required
+              id="password"
+              [(ngModel)]="user.password"
+              name="password"
+              type="password"
+              class="form-control"
+              placeholder="Enter password"
+            />
+          </div>
+
+         <!-- First Name and Last Name Side by Side -->
+<div class="side-by-side">
+  <div class="form-group">
+    <label for="firstName">First Name</label>
+    <input
+      required
+      id="firstName"
+      [(ngModel)]="user.firstName"
+      name="firstName"
+      type="text"
+      class="form-control"
+      placeholder="Enter here"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="lastName">Last Name</label>
+    <input
+      required
+      id="lastName"
+      [(ngModel)]="user.lastName"
+      name="lastName"
+      type="text"
+      class="form-control"
+      placeholder="Enter here"
+    />
+  </div>
+</div>
+
+<!-- Email and Phone Number Side by Side -->
+<div class="side-by-side">
+  <div class="form-group">
+    <label for="email">Email Address</label>
+    <input
+      required
+      id="email"
+      [(ngModel)]="user.email"
+      name="email"
+      type="email"
+      class="form-control"
+      placeholder="Enter email"
+      #emailModel="ngModel"
+    />
+    <small class="error-text" *ngIf="emailModel.invalid && emailModel.touched">
+      Please enter a valid email address.
+    </small>
+  </div>
+
+  <div class="form-group">
+    <label for="phone">Phone Number</label>
+    <input
+      required
+      [(ngModel)]="user.phone"
+      name="phone"
+      type="tel"
+      class="form-control"
+      placeholder="Enter phone number"
+      id="phone"
+      #phoneModel="ngModel"
+      pattern="^\d{10}$"
+    />
+    <small class="error-text" *ngIf="phoneModel.invalid && phoneModel.touched">
+      Please enter a valid 10-digit phone number.
+    </small>
+  </div>
+</div>
+
+<!-- Role Selection -->
+<div class="full-width form-group">
+  <label for="role">Role</label>
+  <select id="role" name="role" class="form-control" [(ngModel)]="user.role">
+    <option value="NORMAL">Student</option>
+    <option value="TEACHER">Teacher</option>
+  </select>
+</div>
+
+<!-- Category Dropdown (only visible when the user selects Teacher) -->
+<div class="full-width form-group" *ngIf="user.role === 'TEACHER'">
+  <label for="category">Select Category</label>
+  <select id="category" name="category" class="form-control" [(ngModel)]="user.categoryId">
+    <option *ngFor="let category of categories" [value]="category.cid">{{ category.title }}</option>
+  </select>
+</div>
+
+
+          <!-- Button Container for Register and Clear -->
+          <div class="button-container">
+            <button type="submit" class="login-button register-button">Register</button>
+            <button type="button" class="reset-button clear-button" (click)="resetForm()">Clear</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

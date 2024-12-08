@@ -1,0 +1,74 @@
+/* Overall page layout */
+.bootstrap-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .container-fluid {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Main row container */
+  .row {
+    display: flex;
+    flex: 1;
+  }
+  
+  /* Sidebar Styling */
+  app-sidebar {
+    position: sticky;
+    height: calc(100vh - 60px); /* Sidebar height minus navbar height */
+    background-color: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  /* Main content area */
+  .col-md-10 {
+    padding: 20px;
+    background-color: #f9f9f9;
+    flex: 1;
+    overflow: auto;
+    border-left: 2px solid #e0e0e0; /* Slight border to separate content */
+  }
+  
+  /* Dashboard Header */
+  .dashboard-header {
+    margin-bottom: 30px;
+  }
+  
+  .dashboard-header h1 {
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .dashboard-header p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-top: 5px;
+  }
+  
+  /* Adjustments for mobile responsiveness */
+  @media (max-width: 768px) {
+    .row {
+      flex-direction: column;
+    }
+  
+    .col-md-2 {
+      width: 100%;
+    }
+  
+    .col-md-10 {
+      width: 100%;
+      padding-top: 20px; /* Ensure space above content */
+    }
+  
+    app-sidebar {
+      width: 100%;
+      height: auto;
+    }
+  }
+  

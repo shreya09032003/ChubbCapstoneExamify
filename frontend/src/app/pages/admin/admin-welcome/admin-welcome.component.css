@@ -1,0 +1,158 @@
+/* General dashboard styles */
+.dashboard-container {
+    font-family: Poppins, sans-serif;
+    text-align: center;
+    margin: 20px;
+    /* background: linear-gradient(to right, #f3f4f7, #ffffff);  */
+    border-radius: 10px;
+    /* box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); */
+}
+
+.dashboard-container h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: 700;
+    top: 0px;
+
+   
+    letter-spacing: 1px;
+}
+
+/* Cards container styles */
+.cards-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Card styles */
+.card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 280px;
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.3s ease;
+    margin: 15px;
+    padding: 10px;
+    position: relative;
+}
+
+/* Card hover effect */
+.card:hover {
+    transform: translateY(-12px) scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+    background-color: #f5f5f5; /* Light background on hover */
+}
+
+/* Card image styles */
+.card-image img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    /* border-bottom: 2px solid #ddd; */
+    border-radius: 10px;
+}
+
+/* Card content styles */
+.card-content {
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.card-content h3 {
+    font-size: 1.7em;
+    color: #444;
+    margin-bottom: 12px;
+    font-weight: 600;
+    text-transform: capitalize; /* Make the heading more readable */
+    letter-spacing: 0.5px;
+}
+
+.card-content p {
+    font-size: 1.4em;
+    color: #7fc8ac;
+    font-weight: 700;
+    margin: 0;
+    padding: 5px 0;
+    letter-spacing: 1px;
+}
+
+/* Additional card image effect */
+.card-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+}
+
+/* Add icon inside the card */
+.card:before {
+    content: '\f2bb'; /* FontAwesome Icon for "statistics" */
+    font-family: 'FontAwesome';
+    font-size: 2em;
+    color: #7fc8ac;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    opacity: 0.7;
+}
+
+.card:active {
+    transform: scale(0.98); /* Reduce size on click for feedback */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cards-container {
+        justify-content: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+
+.chart-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #f9f9f9; /* Softer background */
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 15px;
+    width: 90%; /* Adaptable width for smaller screens */
+    max-width: 400px; /* Restrict maximum size */
+}
+
+.chart-container h3 {
+    font-size: 1.4em; /* Smaller font */
+    color: #444; /* Softer text color */
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.charts-wrapper {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 30px;
+  }
+  
+  .chart {
+    width: 45%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .chart h3 {
+    margin-bottom: 20px;
+  }

@@ -1,0 +1,257 @@
+/* Container for the "Add New Quiz" button */
+.container.text-left {
+  margin-top: 20px; /* Space at the top */
+  text-align: left; /* Align the button to the left */
+  margin-bottom: 20px;
+}
+
+/* Add quiz button */
+.container .btn {
+  width: 200px; /* Larger button width */
+  padding: 16px 10px; /* Increase button height */
+  font-size: 1.3rem; /* Larger font size */
+  background-color: #7fc8ac;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.container .btn:hover {
+  background-color: #69a890;
+}
+
+/* Quiz container styling */
+.quiz-container {
+  display: flex;
+  flex-direction: column; /* Align items vertically */
+  gap: 20px;
+  margin: 20px;
+  justify-content: flex-start; /* Ensure alignment from the top */
+}
+
+/* Individual quiz card styling */
+.quiz-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quiz-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Quiz card header styling */
+.quiz-card-header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: hsl(157, 100%, 97%);
+  position: relative; /* Set relative position for absolute positioning of the badge and button */
+}
+
+.quiz-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin-right: 20px;
+  background-image: url("../../../../assets/images/exam.png");
+}
+
+.quiz-title h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 0;
+}
+
+.quiz-title .category {
+  font-size: 1rem;
+  color: #777;
+}
+
+/* Container for the status badge and toggle button */
+.quiz-status-container {
+  position: absolute;
+  top: 10px;
+  right: 20px; /* Adjust to your liking */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+/* Status badge */
+.badge {
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  border-radius: 12px;
+  text-transform: capitalize;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Active status styling */
+.badge-success {
+  background-color: #28a745;
+  color: white;
+}
+
+/* Inactive status styling */
+.badge-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Toggle status button */
+.quiz-status-container .btn {
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  background-color: #4261be;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.quiz-status-container .btn:hover {
+  background-color: rgb(43, 70, 151);
+}
+
+/* Card content styling */
+.quiz-card-content {
+  padding: 20px;
+  color: #555;
+  font-size: 1rem;
+  background-color: #fafafa;
+}
+
+/* Button group styling */
+.quiz-card-actions {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 15px;
+  background-color: #f9f9f9;
+}
+
+.quiz-card-actions .btn {
+  display: inline-block;
+  width: 150px; /* Consistent button width */
+  padding: 12px 0;
+  text-align: center;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Primary button style */
+.quiz-card-actions .btn-primary {
+  background-color: #7fc8ac;
+  color: white;
+  border: none;
+}
+
+.quiz-card-actions .btn-primary:hover {
+  background-color: #72b59b;
+}
+
+/* Secondary button style */
+.quiz-card-actions .btn-secondary {
+  background-color: #95a5a6;
+  color: white;
+  border: none;
+}
+
+.quiz-card-actions .btn-secondary:hover {
+  background-color: #7f8c8d;
+}
+
+/* Danger button style */
+.quiz-card-actions .btn-danger {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+}
+
+.quiz-card-actions .btn-danger:hover {
+  background-color: #c0392b;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .quiz-container {
+    flex-direction: column; /* Ensure the cards stack vertically */
+  }
+
+  .quiz-card-header {
+    padding: 15px;
+  }
+
+  .quiz-title h3 {
+    font-size: 1.2rem;
+  }
+
+  .quiz-card-content {
+    padding: 15px;
+  }
+
+  .quiz-card-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .quiz-card-actions .btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+/* Active button styling */
+.quiz-card-actions .btn.active {
+  background-color: #7fc8ac; /* Green for active */
+  color: white;
+  border-color: #7fc8ac; /* Matching border */
+}
+
+/* Inactive button styling */
+.quiz-card-actions .btn.inactive {
+  background-color: #dc3545; /* Red for inactive */
+  color: white;
+  border-color: #dc3545; /* Matching border */
+}
+
+/* Button hover effects */
+.quiz-card-actions .btn:hover {
+  opacity: 0.8;
+}
+
+/* Update Button group styling */
+.quiz-card-actions {
+  display: flex;
+  justify-content: flex-start; /* Align buttons to the left */
+  flex-wrap: wrap;
+  gap: 10px; /* Add gap between buttons */
+  padding: 15px;
+  background-color: #f9f9f9;
+}
+
+/* Additional button-specific styles */
+.quiz-card-actions .btn {
+  width: auto; /* Adjust button width dynamically */
+  padding: 10px 15px; /* Make buttons a bit smaller */
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

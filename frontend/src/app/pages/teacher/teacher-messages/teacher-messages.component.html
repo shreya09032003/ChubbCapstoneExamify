@@ -1,0 +1,37 @@
+<div class="notifications-wrapper">
+  <!-- Notifications List -->
+  <div class="notifications-container">
+    <h2 class="notifications-title">Notifications</h2>
+    <ul class="notifications-list">
+      <li
+        *ngFor="let notification of notifications"
+        [ngClass]="{
+          'notification-item': true,
+          'admin': notification.from === 'admin',
+          'user': notification.from === 'user',
+          'selected': selectedNotification === notification
+        }"
+        (click)="openNotification(notification)"
+      >
+        <div class="notification-header">
+          <span class="notification-subject">{{ notification.subject }}</span>
+          <span class="notification-timestamp">{{ formatTimestamp(notification.timestamp) }}</span>
+        </div>
+        <p class="notification-description">{{ notification.description | slice: 0:50 }}...</p>
+      </li>
+    </ul>
+    <div *ngIf="notifications.length === 0" class="no-notifications">
+      <p>No notifications available.</p>
+    </div>
+  </div>
+
+  <!-- Notification Details -->
+  <div class="notification-details-container" *ngIf="selectedNotification">
+    <button class="close-btn" (click)="closeNotification()">×</button>
+    <h3 class="notification-details-title">{{ selectedNotification.subject }}</h3>
+    <p class="notification-details-timestamp">{{ formatTimestamp(selectedNotification.timestamp) }}</p>
+    <div class="notification-details-body">
+      <p>{{ selectedNotification.description }}</p>
+    </div>
+  </div>
+</div>

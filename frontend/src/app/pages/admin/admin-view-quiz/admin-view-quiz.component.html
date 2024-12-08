@@ -1,0 +1,34 @@
+
+<div class="quiz-container">
+    <div class="container text-left mt20">
+      <!-- <a [routerLink]="['/teacher', teacherId, 'add-quiz']" class="btn btn-primary"> + Add New Quiz</a> -->
+    </div>
+    <div class="quiz-card" *ngFor="let q of quizzes">
+      <div class="quiz-card-header">
+        <div class="quiz-avatar"></div>
+        <div class="quiz-title">
+          <h3>{{ q.title }}</h3>
+          <p class="category">{{ q.category.title }}</p>
+        </div>
+      </div>
+  
+      <div class="quiz-card-content">
+        <p>{{ q.description }}</p>
+      </div>
+  
+      <!-- <div class="quiz-card-actions">
+        <a [routerLink]="['/teacher', teacherId, 'view-questions', q.qId, q.title]"
+        class="btn btn-primary">
+          Questions
+        </a>
+        <a class="btn btn-secondary">Max Marks: {{ q.maxMarks }}</a>
+        <a class="btn btn-secondary">Questions: {{ q.numberOfQuestions }}</a>
+        <a [routerLink]="['/teacher', teacherId, 'quiz', q.qId]" class="btn btn-primary">Update</a>
+        <a class="btn btn-primary">Attempts</a>
+      </div> -->
+    </div>
+  </div>
+  
+  <!-- [routerLink]="['/teacher', teacherId, 'update-quiz', q.qId]" -->
+  <!-- [routerLink]="['/admin', 'quiz', q.qId]" -->
+  

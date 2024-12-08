@@ -1,0 +1,16 @@
+<div class="teacher-dashboard">
+    <h2>Teacher Dashboard - Category Analytics</h2>
+  
+    <div class="statistics-container">
+      <div class="statistics-item chart-card">
+        <h3>Category Performance</h3>
+        <canvas baseChart [data]="barChartData" [options]="barChartOptions" [type]="barChartType"></canvas>
+      </div>
+  
+      <div class="statistics-item chart-card">
+        <h3>Average Score</h3>
+        <canvas baseChart [data]="doughnutChartData" [options]="doughnutChartOptions" [type]="doughnutChartType"></canvas>
+      </div>
+    </div>
+  </div>
+  

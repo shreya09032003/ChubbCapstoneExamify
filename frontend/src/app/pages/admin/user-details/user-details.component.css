@@ -1,0 +1,98 @@
+/* General container styling */
+.teacher-details-container {
+    /* background-color: #f4f4f9; */
+    padding: 30px;
+    max-width: 600px;
+    margin: 50px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .teacher-details-container h2 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Loading spinner and text */
+  .loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: #666;
+    padding: 20px;
+  }
+  
+  .spinner {
+    border: 4px solid #f3f3f3; /* Light gray */
+    border-top: 4px solid #3498db; /* Blue color */
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 2s linear infinite;
+    margin-right: 10px;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Teacher profile section */
+  .teacher-profile {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .teacher-profile img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Teacher details styling */
+  .teacher-name,
+  .teacher-email,
+  .teacher-id,
+  .teacher-other-info {
+    color: #555;
+    font-size: 18px;
+    margin: 10px 0;
+    padding: 5px;
+    /* border-bottom: 1px solid #e0e0e0; */
+  }
+  
+  .teacher-name {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .teacher-email {
+    color: #3498db; /* Blue for email */
+  }
+  
+  .teacher-id {
+    color: #888;
+  }
+  
+  .teacher-other-info {
+    color: #555;
+  }
+  
+  /* Hover effect for teacher details */
+  .teacher-name:hover,
+  .teacher-email:hover,
+  .teacher-id:hover,
+  .teacher-other-info:hover {
+    background-color: #f0f8ff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  

@@ -1,0 +1,27 @@
+<div class="category-container">
+    <h1 class="category-heading">All Categories</h1>
+  
+    <div class="category-grid">
+      <div class="category-card" *ngFor="let c of categories">
+        <a [routerLink]="['/admin/admin-view-quiz', c.cid]" style="text-decoration: none;" class="category-link">
+
+        <div class="category-icon">
+          <i class="fas fa-cogs"></i> 
+        </div>
+        <h3 class="category-title">{{ c.title }}</h3>
+        <p class="category-description">{{ c.description }}</p>
+        <!-- Delete Button -->
+        <button (click)="deleteCategory(c.cid)" class="delete-category-button">
+          Delete
+        </button>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="text-center mt-20">
+    <a routerLink="/admin/add-category-admin" class="add-category-button">
+     + Add New Category
+    </a>
+  </div>
+  

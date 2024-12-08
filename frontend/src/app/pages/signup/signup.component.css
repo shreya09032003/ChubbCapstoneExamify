@@ -1,0 +1,187 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(
+            rgba(255, 255, 255, 0.8), 
+            rgba(255, 255, 255, 0.8)
+        ), 
+        url('https://images.pexels.com/photos/5926398/pexels-photo-5926398.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center fixed;
+    background-size: cover; /* Ensures the image covers the entire viewport */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.login-container {
+    display: flex;
+    width: 100%;
+    max-width: 950px;
+    height: 550px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    background: white;
+    margin: auto;
+    margin-top: 2%;
+}
+
+.left-section {
+    flex: 1;
+    background-color: #f7f9fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.right-section {
+    flex: 1;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+    overflow-y: auto;
+}
+
+.login-card {
+    width: 100%;
+    box-shadow: none;
+    background: transparent;
+}
+
+.login-heading {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+}
+
+.full-width {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+input.form-control {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    box-sizing: border-box;
+    background-color: #f0f7f9;
+    color: #333;
+}
+
+button.login-button,
+button.reset-button {
+    width: 48%; /* Make buttons smaller to fit side by side */
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+button.login-button {
+    background: #7fc8ac;
+    color: white;
+    transition: all 0.3s;
+    margin-right: 4%; /* Space between buttons */
+}
+
+button.login-button:hover {
+    box-shadow: 0px 4px 10px rgba(129, 212, 250, 0.4);
+}
+
+button.reset-button {
+    background: #f0f7f9;
+    border: 2px solid #7fc8ac;
+    color: #7fc8ac;
+    transition: all 0.3s;
+}
+
+button.reset-button:hover {
+    box-shadow: 0px 4px 10px rgba(171, 193, 238, 0.4);
+}
+
+/* New styles for button container */
+.button-container {
+    display: flex;
+    justify-content: space-between; /* Distribute buttons side by side */
+    width: 100%;
+    margin-top: 10px; /* Add some space between the form and buttons */
+}
+
+/* Styles to make fields appear side by side */
+.side-by-side {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Adds space between fields */
+}
+
+.side-by-side .form-group {
+    width: 48%; /* Ensures each field takes up 48% width */
+}
+
+/* Optional: To adjust error text styling */
+.error-text {
+    color: red;
+    font-size: 0.9rem;
+}
+
+/* Global Styles for Select Input */
+select.form-control {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background-color: #f0f7f9;
+    color: #333;
+    box-sizing: border-box;
+}
+
+/* Add styles for select on hover and focus */
+select.form-control:hover,
+select.form-control:focus {
+    border-color: #7fc8ac;
+    outline: none;
+    box-shadow: 0 0 5px rgba(129, 212, 250, 0.4);
+}
+
+/* Label styling */
+label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Optional: Adjust small error text for select element */
+select.form-control:invalid {
+    border-color: red;
+}
+
+small.error-text {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+}

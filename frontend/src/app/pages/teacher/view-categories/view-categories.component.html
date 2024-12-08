@@ -1,0 +1,19 @@
+<div class="category-container">
+  <h1 class="category-heading">All Categories</h1>
+
+  <div class="category-grid">
+    <div class="category-card" *ngFor="let c of categories">
+      <div class="category-icon">
+        <i class="fas fa-cogs"></i> <!-- Example icon, you can use your preferred icons -->
+      </div>
+      <h3 class="category-title">{{ c.title }}</h3>
+      <p class="category-description">{{ c.description }}</p>
+    </div>
+  </div>
+</div>
+
+  <div class="text-center mt-20">
+    <a [routerLink]="['/teacher', teacherId, 'add-category']" class="add-category-button">
+      Add New Category
+    </a>
+  </div>

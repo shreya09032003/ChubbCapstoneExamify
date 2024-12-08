@@ -1,0 +1,64 @@
+<div class="bootstrap-wrapper">
+  <div class="container-fluid">
+    <!-- Filter Categories -->
+  
+
+    <!-- Quizzes Display -->
+    <div class="quiz-container mt20" *ngIf="quizzes">
+      <h1 class="mt20">Available Quizzes</h1>
+      <div class="filter-buttons">
+        <button class="filter-button" 
+                (click)="resetFilter()" 
+                [ngClass]="{'active': catId === 0}">
+          All Categories
+        </button>
+        <button *ngFor="let category of categories" 
+                class="filter-button" 
+                (click)="filterQuizzesByCategory(category.cid)" 
+                [ngClass]="{'active': catId === category.cid}">
+          {{ category.title }}
+        </button>
+      </div>
+      <div class="quiz-card" *ngFor="let q of quizzes" [ngClass]="{'inactive': !q.active}">
+        <div class="quiz-card-header">
+          <div class="quiz-avatar"></div>
+          <div class="quiz-title">
+            <h3>{{ q.title }}</h3>
+            <p class="category">{{ q.category.title }}</p>
+            <br>
+         
+            <span [class]="q.active ? 'badge badge-success' : 'badge badge-danger'">
+              {{ q.active ? 'Active' : 'Inactive' }}
+            </span>
+          </div>
+        </div>
+      
+        <div class="quiz-card-content">
+          <p>{{ q.description }}</p>
+        </div>
+      
+        <div class="quiz-card-actions">
+          <a  [routerLink]="['/user-dashboard', userId, 'instructions', q.qId]" 
+              class="btn btn-primary"
+              [ngClass]="{'disabled': !q.active}" 
+              [attr.disabled]="!q.active ? true : null">
+            Start
+          </a>
+          <a class="btn btn-secondary">Questions: {{ q.numberOfQuestions }}</a>
+          <a class="btn btn-secondary">Max Marks: {{ q.maxMarks }}</a>
+        </div>
+      </div>
+      
+    </div>
+
+    <!-- No Data Available -->
+    <div class="col-md-12" *ngIf="quizzes.length === 0">
+      <mat-card class="no-data-card">
+        <mat-card-content class="no-data-content">
+          <h1 class="no-data-heading">No Quizzes Available in This Category</h1>
+          <p class="no-data-description">It seems there are no quizzes available at the moment. Please check back later or explore other categories.</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

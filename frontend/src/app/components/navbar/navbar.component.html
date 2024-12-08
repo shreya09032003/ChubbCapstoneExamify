@@ -1,0 +1,43 @@
+<nav class="custom-toolbar">
+  <div class="toolbar-left">
+    <a href="/" class="toolbar-icon" aria-label="Go to homepage">
+      <img src="https://cdn-icons-png.flaticon.com/512/8832/8832880.png" alt="Home" class="toolbar-logo" />
+    </a>
+    <span class="toolbar-title">Examify</span>
+  </div>
+
+  <div class="toolbar-right">
+    <a
+      *ngIf="!isLoggedIn"
+      href="/login"
+      class="auth-link login-button"
+      aria-label="Go to login page"
+    >
+      Login
+    </a>
+    <a
+      *ngIf="!isLoggedIn"
+      href="/signup"
+      class="auth-link"
+      aria-label="Go to signup page"
+    >
+      Register
+    </a>
+    <a
+      (click)="logout()"
+      *ngIf="isLoggedIn"
+      class="auth-link logout"
+      aria-label="Logout"
+    >
+      Logout
+    </a>
+    <button
+      *ngIf="isLoggedIn && user"
+      class="profile-button"
+      aria-label="Go to user profile"
+      onclick="window.location='/admin/profile'"
+    >
+      {{ user.username }}
+    </button>
+  </div>
+</nav>

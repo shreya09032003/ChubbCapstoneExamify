@@ -1,0 +1,140 @@
+<div class="bootstrap-wrapper">
+  <h1>
+    Add Question to <span style="font-weight: bold">{{ qTitle }}</span>
+  </h1>
+  <div class="row mt20">
+    <div class="col-md-12">
+
+      <h5 class="counter-header">
+        Questions Added: <span class="counter">{{ questionsAdded }}</span>/<span class="total">{{ totalQuestions }}</span>
+      </h5>
+  <!-- Counter Section -->
+<div class="counter-section text-center">
+  <div *ngIf="questionsAdded === totalQuestions" class="counter-warning text-danger">
+    Maximum question limit reached. You cannot add more questions.
+  </div>
+</div>
+
+    
+      <div class="card mt3" [class.disabled]="questionsAdded === totalQuestions">
+        <div class="card-header">
+          <div class="card-subtitle">
+            Enter the details of the new question
+          </div>
+        </div>
+        <div class="card-body">
+          <form *ngIf="questionsAdded < totalQuestions" (submit)="formSubmit()" class="mt20">
+            <!-- Form Fields -->
+            <div class="form-group">
+              <textarea
+                required
+                rows="8"
+                [(ngModel)]="question.content"
+                name="content"
+                placeholder="Enter question content"
+                class="form-control"
+              ></textarea>
+            </div>
+
+            <!-- Question Type -->
+            <div class="form-group">
+              <label for="type">Select Question Type</label>
+              <select [(ngModel)]="question.type" name="type" id="type" class="form-control">
+                <option *ngFor="let type of questionTypes" [value]="type">{{ type }}</option>
+              </select>
+            </div>
+
+            <!-- Options (only for MCQ type) -->
+            <div *ngIf="question.type === 'MCQ'" class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="option1">Enter Option 1</label>
+                  <input
+                    required
+                    [(ngModel)]="question.option1"
+                    name="option1"
+                    type="text"
+                    placeholder="Option 1"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="option2">Enter Option 2</label>
+                  <input
+                    required
+                    [(ngModel)]="question.option2"
+                    name="option2"
+                    type="text"
+                    placeholder="Option 2"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+            </div>
+            <div *ngIf="question.type === 'MCQ'" class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="option3">Enter Option 3</label>
+                  <input
+                    [(ngModel)]="question.option3"
+                    name="option3"
+                    type="text"
+                    placeholder="Option 3"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="option4">Enter Option 4</label>
+                  <input
+                    [(ngModel)]="question.option4"
+                    name="option4"
+                    type="text"
+                    placeholder="Option 4"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Fill Blank Question Type -->
+            <div *ngIf="question.type === 'FILL_BLANK'" class="form-group">
+              <label for="answer">Answer</label>
+              <input 
+                type="text" 
+                id="answer" 
+                [(ngModel)]="question.answer" 
+                name="answer"
+                required 
+                placeholder="Enter your answer here"
+                class="form-control"
+              >
+            </div>
+
+            <!-- Answer -->
+            <div *ngIf="question.type !== 'FILL_BLANK'" class="form-group">
+              <label for="answer">Select Answer</label>
+              <select required [(ngModel)]="question.answer" name="answer" id="answer" class="form-control">
+                <option *ngIf="question.option1" [value]="question.option1">{{ question.option1 }}</option>
+                <option *ngIf="question.option2" [value]="question.option2">{{ question.option2 }}</option>
+                <option *ngIf="question.option3" [value]="question.option3">{{ question.option3 }}</option>
+                <option *ngIf="question.option4" [value]="question.option4">{{ question.option4 }}</option>
+                <!-- For TRUE_FALSE, show only True and False options -->
+                <option *ngIf="question.type === 'TRUE_FALSE'" [value]="'True'">True</option>
+                <option *ngIf="question.type === 'TRUE_FALSE'" [value]="'False'">False</option>
+              </select>
+            </div>
+
+            <div class="container text-center">
+              <button class="btn btn-primary" [disabled]="questionsAdded === totalQuestions">
+                Add Question
+              </button>            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="add-category-container">
+    <h1 class="section-heading">Add New Category</h1>
+  
+    <div class="form-container">
+      <form (ngSubmit)="formSubmit()" class="category-form">
+        <!-- Title Form Field -->
+        <div class="form-field">
+          <label for="title" class="form-label">Title</label>
+          <input
+            required
+            autofocus
+            type="text"
+            id="title"
+            name="title"
+            class="form-input"
+            placeholder="Enter title here"
+            [(ngModel)]="category.title"
+          />
+        </div>
+  
+        <!-- Description Form Field -->
+        <div class="form-field">
+          <label for="description" class="form-label">Description</label>
+          <textarea
+            name="description"
+            id="description"
+            class="form-textarea"
+            placeholder="Enter Category Description"
+            [(ngModel)]="category.description"
+            rows="8"
+          ></textarea>
+        </div>
+  
+        <!-- Submit Button -->
+        <div class="submit-button">
+          <button type="submit" class="btn-submit">Add</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

@@ -1,0 +1,38 @@
+<div class="page-layout">
+
+
+  <div class="main-content">
+    <!-- Sidebar -->
+    <mat-card class="sidebar-card">
+      <mat-action-list class="sidebar-list">
+        <div mat-subheader class="sidebar-header">Menu</div>
+        <button [routerLink]="['/teacher' , teacherId]" mat-list-item class="sidebar-item">
+          <mat-icon mat-list-icon>home</mat-icon> Home
+        </button>
+        <button mat-list-item [routerLink]="['/teacher', teacherId, 'profile']"  class="sidebar-item"  routerLinkActive="active">
+          <mat-icon mat-list-icon>account_circle</mat-icon> Profile
+        </button>
+        <!-- <button mat-list-item [routerLink]="['/teacher', teacherId, 'categories']" class="sidebar-item">
+          <mat-icon mat-list-icon>list</mat-icon> Categories
+        </button>
+        <button mat-list-item [routerLink]="['/teacher', teacherId, 'add-category']" class="sidebar-item">
+          <mat-icon mat-list-icon>add_circle_outline</mat-icon> Add Categories
+        </button> -->
+        <button mat-list-item [routerLink]="['/teacher', teacherId, 'quizzes']" class="sidebar-item"  routerLinkActive="active">
+          <mat-icon mat-list-icon>quiz</mat-icon> Quizzes
+        </button>
+        <button mat-list-item [routerLink]="['/teacher', teacherId, 'add-quiz']" class="sidebar-item"  routerLinkActive="active">
+          <mat-icon mat-list-icon>add</mat-icon> Add Quiz
+        </button>
+        <button mat-list-item [routerLink]="['/teacher', teacherId, 'teacher-messages']" class="sidebar-item"  routerLinkActive="active">
+          <mat-icon mat-list-icon>notifications</mat-icon>Notifications
+        </button>
+        
+      
+      </mat-action-list>
+    </mat-card>
+
+    <!-- Main Content Area -->
+  
+  </div>
+</div>

@@ -1,0 +1,80 @@
+
+<!-- admin-dashboard.component.html -->
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Sidebar Component -->
+        <div class="col-md-2">
+            <app-admin-sidebar></app-admin-sidebar>
+        </div>
+  
+        <!-- Main Content Area -->
+        <div class="col-md-10">
+          <router-outlet></router-outlet> <!-- Dynamic content -->
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <style>
+    /* admin-dashboard.component.css */
+
+/* Overall page layout */
+.bootstrap-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .container-fluid {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Main row container */
+  .row {
+    display: flex;
+    flex: 1;
+  }
+  
+  /* Sidebar Styling */
+  app-admin-sidebar {
+    position: sticky;
+    height: calc(100vh - 60px); /* Sidebar height minus navbar height */
+    background-color: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  /* Main content area */
+  .col-md-10 {
+    padding: 20px;
+    background-color: #f9f9f9;
+    flex: 1;
+    overflow: auto;
+  }
+  
+  /* Adjustments for mobile responsiveness */
+  @media (max-width: 768px) {
+    .row {
+      flex-direction: column;
+    }
+  
+    .col-md-2 {
+      width: 100%;
+    }
+  
+    .col-md-10 {
+      width: 100%;
+      padding-top: 20px; /* Ensure space above content */
+    }
+  
+    app-sidebar {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  </style>

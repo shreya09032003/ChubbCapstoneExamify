@@ -1,0 +1,145 @@
+<div class="quiz-wrapper" *ngIf="!isSubmit">
+  <!-- Progress Bar -->
+  <div class="container">
+    <div class="col-md-2">
+      <div class="progress-card">
+        <h2>Progress</h2>
+        <p>Quiz will automatically submit when timer reaches <strong>0:0</strong></p>
+        <div class="timer">
+          <h3>{{ getFormattedTime() }}</h3>
+          <div class="progress-bar">
+            <div class="progress-fill" 
+            [ngStyle]="{ 'width': ((timer / (questions.length * 30)) * 100) + '%' }">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <!-- Optional section for instructions (if needed) -->
+      </div>
+
+      <div class="col-md-8">
+        <!-- Quiz Header -->
+        <ng-container *ngIf="questions">
+          <h1 class="quiz-title">
+            On Going Quiz: <strong>{{ quizDetails.title }}</strong>
+          </h1>
+        </ng-container>
+
+        <!-- Questions -->
+        <div *ngFor="let q of questions; let i = index" class="quiz-card"
+        [ngClass]="{ 'unanswered': !q.givenAnswer }">
+        
+          <div class="quiz-card-content">
+            <p class="question">
+              <b>Q {{ i + 1 }} <span style="color: red;">*</span></b>
+              <span [innerHTML]="q.content"></span>
+            </p>
+
+            <!-- MCQ Options -->
+            <div class="options" *ngIf="q.type === 'MCQ'">
+              <div class="option" *ngFor="let option of [q.option1, q.option2, q.option3, q.option4]; let j = index">
+                <input
+                  type="radio"
+                  [value]="option"
+                  [name]="j.toString()"
+                  [(ngModel)]="q.givenAnswer"
+                />
+                <label>{{ option }}</label>
+              </div>
+            </div>
+
+            <!-- True/False Options -->
+            <div class="options" *ngIf="q.type === 'TRUE_FALSE'">
+              <div class="option">
+                <input
+                  type="radio"
+                  [value]="'True'"
+                  [name]="i.toString()"
+                  [(ngModel)]="q.givenAnswer"
+                />
+                <label>True</label>
+              </div>
+              <div class="option">
+                <input
+                  type="radio"
+                  [value]="'False'"
+                  [name]="i.toString()"
+                  [(ngModel)]="q.givenAnswer"
+                />
+                <label>False</label>
+              </div>
+            </div>
+
+            <!-- Fill in the Blank -->
+            <div class="fill-blank" *ngIf="q.type === 'FILL_BLANK'">
+              <input
+                type="text"
+                [(ngModel)]="q.givenAnswer"
+                placeholder="Your answer here"
+                class="form-control"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="text-center">
+          <button class="btn-submit" (click)="submitQuiz()">Submit Quiz</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="quiz-wrapper" *ngIf="isSubmit">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="result-card">
+        <h2>Quiz Result Report</h2>
+
+        <!-- User Details -->
+        <div class="user-details">
+          <h4>User Details</h4>
+          <p><strong>Name:</strong> {{ userName }}</p>
+        </div>
+
+        <!-- Quiz Details -->
+        <div class="quiz-details">
+          <h4>Quiz Information</h4>
+          <p><strong>Quiz Title:</strong> {{ quizTitle }}</p>
+          <p><strong>Description:</strong> {{ quizDescription }}</p>
+        </div>
+
+        <!-- Performance Summary -->
+        <div class="result-details">
+          <h4>Your Performance</h4>
+          <p><strong>Marks Got:</strong> {{ marksGot }}</p>
+          <p><strong>Correct Answers:</strong> {{ correctAnswers }}</p>
+          <p><strong>Questions Attempted:</strong> {{ attempted }}</p>
+        </div>
+
+        <!-- Additional Insights -->
+        <div class="performance-summary">
+          <h4>Summary of Results</h4>
+          <p>
+            You answered 
+            <strong>{{ correctAnswers }}</strong> questions correctly out of 
+            <strong>{{ questions.length }}</strong>, achieving a score of 
+            <strong>{{ marksGot }}</strong> marks.
+          </p>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+          <!-- <button class="btn-download-pdf" (click)="downloadPDF()">Download PDF</button> -->
+          <button (click)="downloadPDF()" class="btn-download-pdf">Download PDF</button>
+
+          <a class="btn-home"  [routerLink]="['/user-dashboard' , userId]">Go to Dashboard</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

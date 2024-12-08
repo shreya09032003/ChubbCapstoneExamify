@@ -1,0 +1,92 @@
+<h1>Add New Quiz</h1>
+<div class="form-wrapper">
+  <div class="form-container">
+    <form (ngSubmit)="addQuiz()">
+      <!-- Title field -->
+      <div class="form-group">
+        <label for="title">Enter Title</label>
+        <input
+          [(ngModel)]="quizData.title"
+          type="text"
+          name="title"
+          id="title"
+          placeholder="Enter here"
+          required
+        />
+      </div>
+
+      <!-- Description field -->
+      <div class="form-group">
+        <label for="description">Enter Description</label>
+        <textarea
+          [(ngModel)]="quizData.description"
+          name="description"
+          id="description"
+          placeholder="Enter here"
+          rows="5"
+        ></textarea>
+      </div>
+
+      <!-- Row for max marks and number of questions -->
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="maxMarks">Maximum Marks</label>
+            <input
+              [(ngModel)]="quizData.maxMarks"
+              type="text"
+              name="maxMarks"
+              id="maxMarks"
+              placeholder="Automatically set to number of questions"
+              readonly
+            />
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="numberOfQuestions">Number of Questions</label>
+            <input
+              [(ngModel)]="quizData.numberOfQuestions"
+              (ngModelChange)="updateMaxMarks()"
+              type="text"
+              name="numberOfQuestions"
+              id="numberOfQuestions"
+              placeholder="Enter here"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Active field -->
+      <div class="form-group">
+        <label class="switch">
+          <input
+            type="checkbox"
+            [(ngModel)]="quizData.active"
+            name="active"
+            id="active"
+          />
+          <span class="slider round"></span>
+        </label>
+        <span>   Publish Status</span>
+      </div>
+
+      <!-- Category field -->
+      <div class="form-group">
+        <label for="category">Category</label>
+        <input
+          type="text"
+          name="category"
+          id="category"
+          [value]="categoryTitle"
+          readonly
+        />
+      </div>
+
+      <!-- Submit Button -->
+      <div class="form-group text-center">
+        <button type="submit" class="submit-btn">Add</button>
+      </div>
+    </form>
+  </div>
+</div>

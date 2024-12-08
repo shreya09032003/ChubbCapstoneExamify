@@ -1,0 +1,63 @@
+<div class="login-page">
+  <div class="login-container">
+    <!-- Left Section (Image) -->
+    <div class="left-section">
+      <img class="login-image" src="https://img.freepik.com/free-vector/exams-concept-illustration_114360-2754.jpg?t=st=1733394799~exp=1733398399~hmac=eb326f22b71b3bbd33729a551103dd93762ba654ac31114efefd8bb703ded42a&w=740" alt="">
+    </div>
+
+    <!-- Right Section (Form) -->
+    <div class="right-section">
+      <div class="login-card">
+        <h1 class="text-center login-heading">Welcome Back!</h1>
+
+        <form (ngSubmit)="formSubmit()">
+          <!-- Username Field -->
+          <div class="full-width form-group">
+            <label for="username">Username</label>
+            <input
+              [(ngModel)]="loginData.username"
+              name="username"
+              id="username"
+              required
+              class="form-control"
+              placeholder="Enter your username"
+            />
+          </div>
+
+          <!-- Password Field -->
+          <div class="full-width form-group">
+            <label for="password">Password</label>
+            <input
+            [(ngModel)]="loginData.password"
+            name="password"
+            id="password"
+            [type]="hide ? 'password' : 'text'"
+            required
+            class="form-control"
+            placeholder="Enter your password"
+            />
+            <button
+            type="button"
+            class="btn btn-icon"
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+            >
+            <span>{{ hide ? 'Hide' : 'Show' }}</span>
+          </button>
+          </div>
+
+          <!-- Buttons -->
+          <div class="button-group text-center">
+            <button type="submit" class="login-button">
+              Login
+            </button>
+            <button type="button" (click)="resetForm()" class="reset-button">
+              Reset
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

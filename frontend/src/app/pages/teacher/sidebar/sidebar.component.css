@@ -1,0 +1,100 @@
+/* Page layout to use Flexbox */
+.page-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Main content container */
+.main-content {
+    display: flex;
+    flex: 1;
+}
+
+/* Sidebar Styling */
+.sidebar-card {
+    width: 300px; /* Adjust the width of the sidebar */
+    position: sticky;
+    top: 0;
+    height: calc(100vh - 60px); /* Sidebar should span the full height minus the navbar height */
+    background-color: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    flex-shrink: 0;
+    border-radius: 0; /* Remove any border-radius */
+}
+
+/* Sidebar list */
+.sidebar-list {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+}
+
+/* Sidebar header */
+.sidebar-header {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Sidebar items */
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+    text-align: left;
+    font-size: 1rem;
+    color: #555;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Sidebar item hover effect */
+.sidebar-item:hover {
+    background-color: #f0f7f9;
+}
+
+.sidebar-item mat-icon {
+    margin-right: 10px;
+}
+
+/* Optional: Styling for active state */
+.sidebar-item.router-link-active {
+    background-color: #7fc8ac;
+    color: white;
+}
+
+/* Content area styling */
+.content-area {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+    overflow: auto;
+}
+
+/* Adjustments for mobile responsiveness */
+@media (max-width: 768px) {
+    .sidebar-card {
+        width: 100%;
+        height: auto;
+    }
+    .sidebar-header {
+        font-size: 1rem;
+    }
+}
+
+/* admin-sidebar.component.css */
+.sidebar-item.active {
+    background-color: #7fc8ac; /* Blue background for active item */
+    color: white; /* White text when active */
+  }
+  
+  .sidebar-item:hover {
+    background-color: #edf6f2
+  }
+  

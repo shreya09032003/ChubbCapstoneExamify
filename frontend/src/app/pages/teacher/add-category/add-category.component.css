@@ -1,0 +1,109 @@
+/* Main container for the form */
+.add-category-container {
+  padding: 40px;
+  background-color: #f8f9fa;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+/* Heading */
+.section-heading {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* Form container */
+.form-container {
+  padding: 60px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* General form styling */
+.category-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Form field styling */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Label styling */
+.form-label {
+  font-size: 1rem;
+  color: #555;
+  font-weight: 500;
+}
+
+/* Input styling */
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+/* Textarea specific styling */
+.form-textarea {
+  resize: vertical;
+}
+
+/* Button styling */
+.submit-button {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-submit {
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  color: white;
+  background-color: #7fc8ac;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #609e86;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .add-category-container {
+    padding: 15px;
+  }
+
+  .section-heading {
+    font-size: 1.8rem;
+  }
+
+  .category-form {
+    gap: 15px;
+  }
+
+  .form-input,
+  .form-textarea {
+    padding: 10px;
+  }
+}

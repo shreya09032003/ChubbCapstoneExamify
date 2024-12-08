@@ -1,0 +1,27 @@
+<div class="view-teachers-container">
+  <h2>All Teachers</h2>
+
+  <div *ngIf="loading" class="loading">
+    <div class="spinner"></div>
+    Loading teachers...
+  </div>
+  
+  <div *ngIf="!loading && teachers.length === 0" class="no-teachers">
+    No teachers found.
+  </div>
+
+  <div *ngIf="!loading && teachers.length > 0" class="teacher-grid">
+    <div class="teacher-card" *ngFor="let teacher of teachers">
+      <a [routerLink]="['/admin/userdetails', teacher.username]" style="text-decoration: none;" class="teacher-link">
+        <div class="teacher-profile">
+          <img src="https://www.shutterstock.com/image-vector/vector-flat-illustration-grayscale-avatar-600nw-2264922221.jpg" alt="profile" />
+        </div>
+        <h3 class="teacher-name">{{ teacher.username }}</h3>
+        <p class="teacher-email">{{ teacher.email }}</p>
+        <p class="teacher-id">ID: {{ teacher.id }}</p>
+      </a>
+
+      <button class="delete-teacher-button" (click)="deleteTeacher(teacher.id)">Delete</button>
+    </div>
+  </div>
+</div>

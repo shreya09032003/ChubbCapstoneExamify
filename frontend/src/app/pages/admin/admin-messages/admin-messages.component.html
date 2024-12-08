@@ -1,0 +1,26 @@
+<div class="notification-form">
+  <h2>Send Notification</h2>
+  
+  <form (ngSubmit)="sendNotification()">
+    <div class="form-group">
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" [(ngModel)]="subject" name="subject" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description" [(ngModel)]="description" name="description" required></textarea>
+    </div>
+    
+    <div class="form-group">
+      <label for="role">Role</label>
+      <select id="role" [(ngModel)]="role" name="role" required>
+        <option value="NORMAL">Students</option>
+        <option value="TEACHER">Teachers</option>
+        <option value="BOTH">Both</option>
+      </select>
+    </div>
+    
+    <button type="submit">Send Notification</button>
+  </form>
+</div>

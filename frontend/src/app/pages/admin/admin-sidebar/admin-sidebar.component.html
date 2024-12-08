@@ -1,0 +1,36 @@
+<!-- admin-sidebar.component.html -->
+<div class="page-layout">
+  <div class="main-content">
+    <!-- Sidebar -->
+    <mat-card class="sidebar-card">
+      <mat-action-list class="sidebar-list">
+        <div mat-subheader class="sidebar-header">Menu</div>
+        <!-- Home link for Admin Dashboard -->
+        <button routerLink="/admin" mat-list-item class="sidebar-item" >
+          <mat-icon mat-list-icon>home</mat-icon> Home
+        </button>
+        <!-- All Teachers link -->
+        <button mat-list-item routerLink="/admin/teachers" class="sidebar-item" routerLinkActive="active">
+          <mat-icon mat-list-icon>group</mat-icon> All Teachers
+        </button>
+        <!-- All Students link -->
+        <button mat-list-item routerLink="/admin/students" class="sidebar-item" routerLinkActive="active">
+          <mat-icon mat-list-icon>people</mat-icon> All Students
+        </button>
+        <!-- All Categories link -->
+        <button mat-list-item routerLink="/admin/categories" class="sidebar-item" routerLinkActive="active">
+          <mat-icon mat-list-icon>list</mat-icon> All Categories
+        </button>
+        <!-- Notifications link -->
+        <button mat-list-item routerLink="/admin/messages" class="sidebar-item" routerLinkActive="active">
+          <mat-icon mat-list-icon>message</mat-icon> Notifications
+        </button>
+        <!-- Analytics link -->
+        <button mat-list-item routerLink="/admin/analytics" class="sidebar-item" routerLinkActive="active">
+          <mat-icon mat-list-icon>analytics</mat-icon> Analytics
+        </button>
+      </mat-action-list>
+    </mat-card>
+    <!-- Main Content Area -->
+  </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="quiz-container">
+  <div class="container text-left mt20">
+    <a [routerLink]="['/teacher', teacherId, 'add-quiz']" class="btn btn-primary"> + Add New Quiz</a>
+  </div>
+  <div class="quiz-card" *ngFor="let q of quizzes">
+    <div class="quiz-card-header">
+      <div class="quiz-avatar"></div>
+      <div class="quiz-title">
+        <h3>{{ q.title }}</h3>
+        <p class="category">{{ q.category.title }}</p>
+      </div>
+  
+      <!-- Display status and toggle button at top right -->
+      <div class="quiz-status-container">
+        <span [class]="q.active ? 'badge badge-success' : 'badge badge-danger'">
+          {{ q.active ? 'Active' : 'Inactive' }}
+        </span>
+        <button class="btn" (click)="toggleStatus(q)">
+          {{ q.active ? 'Deactivate' : 'Activate' }}
+        </button>
+      </div>
+    </div>
+
+
+    
+
+  
+    <div class="quiz-card-content">
+      <p>{{ q.description }}</p>
+    </div>
+
+    <div class="quiz-card-actions">
+      <a [routerLink]="['/teacher', teacherId, 'view-questions', q.qId, q.title]" class="btn btn-primary">Questions</a>
+      <a class="btn btn-secondary">Max Marks: {{ q.maxMarks }}</a>
+      <a class="btn btn-secondary">Questions: {{ q.numberOfQuestions }}</a>
+      <a [routerLink]="['/teacher', teacherId, 'quiz', q.qId]" class="btn btn-primary">Update</a>
+      <a [routerLink]="['/teacher', teacherId, 'quiz', q.qId, 'attempts']" class="btn btn-primary">Attempts</a>
+
+     
+    </div>
+  </div>
+</div>

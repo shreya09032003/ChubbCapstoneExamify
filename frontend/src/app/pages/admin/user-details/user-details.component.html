@@ -1,0 +1,20 @@
+<div class="teacher-details-container">
+    <h2>Teacher Details</h2>
+  
+    <div *ngIf="loading" class="loading">
+      <div class="spinner"></div>
+      Loading teacher details...
+    </div>
+  
+    <div *ngIf="!loading && teacher">
+      <div class="teacher-profile">
+        <img src="https://www.shutterstock.com/image-vector/vector-flat-illustration-grayscale-avatar-600nw-2264922221.jpg" alt="profile" />
+      </div>
+      <h3 class="teacher-name">Username: {{ teacher.username }}</h3>
+      <p class="teacher-email">Email ID:{{ teacher.email }}</p>
+      <p class="teacher-id">ID: {{ teacher.id }}</p>
+      <p class="teacher-other-info">Subject: {{ teacher.category.title }}</p>
+      <!-- Add more teacher details here -->
+    </div>
+  </div>
+  

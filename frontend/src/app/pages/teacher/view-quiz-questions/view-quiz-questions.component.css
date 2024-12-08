@@ -1,0 +1,95 @@
+/* Styling for the wrapper and title */
+.mt20 {
+    margin-top: 20px;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  /* Card styling */
+  .card {
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .card-footer {
+    padding: 15px;
+    background-color: #f8f9fa;
+  }
+  
+  .card-footer button {
+    margin: 0 10px;
+  }
+  
+  hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Button styling */
+  .btn {
+    border-radius: 5px;
+    font-size: 1.1rem;
+  }
+  
+  .btn-primary {
+
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    color: white;
+    background-color: #7fc8ac;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #619a84;
+  }
+  
+  .btn-danger {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    color: white;
+    background-color:red;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+  }
+  
+  /* For margin left on options */
+  .ml-2 {
+    margin-left: 10px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .container-fluid {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  
+    .row {
+      margin-bottom: 10px;
+    }
+  }
+  
+  /* Disabled button styling */
+.disabled-btn {
+  background-color: grey !important;
+  cursor: not-allowed;
+  color: #ccc;
+}
